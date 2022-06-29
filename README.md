@@ -1,5 +1,8 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-// NextMeetup is an application where the users can simply decide a place for meet-ups and enjoy holidays and vacations. The users also get to add meet-up places that the other users can take a look at, and for each look at a particular meet-up place the users get view points that they can later reedem to get badges and swags.
+<br/>
+
+<h1> What is NextMeetup? </h1>
+NextMeetup is an application where the users can simply decide a place for meet-ups and enjoy holidays and vacations. The users also get to add meet-up places that the other users can take a look at, and for each look at a particular meet-up place the users get view points that they can later reedem to get badges and swags.
 
 ## Getting Started
 
