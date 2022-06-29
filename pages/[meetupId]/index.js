@@ -3,30 +3,30 @@ import MeetupDetail from "../../components/meetups/MeetupDetail";
 
 function MeetupDetails(props){ 
     return <MeetupDetail 
-        image={props.image}
-        title={props.title}
-        address={props.address}
-        description={props.description}
+        image={props.meetupData.image}
+        title={props.meetupData.title}
+        address={props.meetupData.address}
+        description={props.meetupData.description}
     />
 };
 
-export async function getStaticPaths(){
+export async function getStaticPaths() {
     return { 
         fallback: false, // setting the fallback value here to be false
         paths: [
             {
                 params: {
-                    meetupId: 'm1' 
+                    meetupId: 'm1',
                 }
             },
             {
                 params: {
-                    meetupId: 'm2' 
+                    meetupId: 'm2',
                 }
             }
         ]
     }
-}
+};
 
 export async function getStaticProps(context){ 
 
