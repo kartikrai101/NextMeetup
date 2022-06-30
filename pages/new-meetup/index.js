@@ -1,11 +1,14 @@
-import { useRouter } from 'next/router'; // importing the useRouter hook from next/router
+import Head from 'next/head'; // importing the Head tag from next 
+
+import { useRouter } from 'next/router';
+import { Fragment } from 'react';
 import NewMeetupForm from '../../components/meetups/NewMeetupForm'; 
 
 function NewMeetupPage (){
+    const router = useRouter();
 
     async function onAddMeetupHandler(enteredMeetupData){ 
 
-        const router = useRouter(); // defining the router object
         
         const response = await fetch('/api/new-meetup', {
             method: 'POST',
@@ -19,13 +22,21 @@ function NewMeetupPage (){
 
         console.log(data);
 
-        router.replace('/');  // replacing the current page's url with the '/' path in the
-        // url and using the replace method instead of 'push' so that user cannot 
-        // return to the previous page after being sent to '/' (home page)
+        router.replace('/'); 
     }
     
     return ( 
-        <NewMeetupForm onAddMeetup={onAddMeetupHandler} />
+        <Fragment>
+            <Head>
+                {/* adding the title and description to our homepage */}
+                <title>Add New Meetup</title>
+                <meta 
+                    name="description"
+                    content="Add your own meetups and create amazing opportunities!"
+                />
+            </Head>
+            <NewMeetupForm onAddMeetup={onAddMeetupHandler} />
+        </Fragment>
     );
 };
 
